@@ -15,6 +15,17 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
 
+    --color-white:#fff;
+    --color-light: #f4f4f4;
+    --color-dark: #525252;
+    --color-black: #141415;
+    --color-primary : #f24e1e;
+    --color-primary-light: hsl(14, 89% , 53% , 12%);
+    --color-success : #29f5a6;
+    --color-warning: #ffce31;
+
+    --transition : all 300ms ease;
+
     /*===== Font and Typography =====*/
     --body-font: 'Poppins', sans-serif;
 
@@ -140,6 +151,9 @@ input{
     border-right: 1px solid var(--box-color);
     transition: .4s;
 }
+.sidebar li a{
+    font-size: 18px;
+}
 .nav__logo{
     position: absolute;
     left: 0;
@@ -199,24 +213,12 @@ input{
 .nav__link.active-link,.nav__link:hover{
     color: var(--skin-color);
 }
-.nav__link.active-link::after,.nav__link:hover::before{
-    position: absolute;
-    content: '';
-    width: 6px;
-    height: 6px;
-    background-color: var(--skin-color);
-    border-radius: 50%;
-    bottom: 1.8rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
 /*=============== MAIN ===============*/
 .main{
     margin-left: 100px;
 }
 .typing{
-    color: var(--skin-color);
+    color: var(--color-primary);
 }
 .nav__toggle{
     height: 32px;
@@ -737,6 +739,7 @@ input{
 }
 .contact__info{
     display: grid;
+
     row-gap: 1rem;
 }
 .contact__card{
@@ -946,6 +949,9 @@ textarea.input{
 }
 
 @media screen and (max-width: 1024px) {
+    .nav__toggle{
+        display: none;
+    }
     .container{
         margin-left: var(--mb-1-5);
         margin-right: var(--mb-1-5);
@@ -986,7 +992,7 @@ textarea.input{
         right: initial;
         left: 1.5rem;
         display: block;
-        font-size: 2rem;
+        font-size: 3rem;
         color: var(--skin-color);
     }
     .nav__toggle{
@@ -1046,9 +1052,6 @@ textarea.input{
 
 /* For Medium Devices */
 @media screen and (max-width: 768px) {
-    .nav__close{
-        left: 25rem;
-    }
     .about__img{
         width: 250px;
     }
@@ -1105,19 +1108,12 @@ textarea.input{
     .portfolio__popup-close{
         top: .5rem;
     }
+    .sidebar li a{
+        font-size: 23px;
+    }
 }
 
 @media screen and (max-width: 576px) {
-    .nav__close{
-        left: 23rem;
-    }
-    .nav__toggle{
-        right: initial;
-        left: 1.5rem;
-    }
-    .home__social{
-        margin-left: 60px;
-    }
     .about__info{
         grid-template-columns: repeat(3,1fr);
     }
@@ -1147,9 +1143,6 @@ textarea.input{
 
 /* For Small Devices */
 @media screen and (max-width: 350px) {
-    .nav__close{
-        left: 17rem;
-    }
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-2);
